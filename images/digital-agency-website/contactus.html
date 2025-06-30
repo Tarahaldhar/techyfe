@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Techify Digital Agency</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="contactus.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-content container">
+        <h1 class="logo">Techify</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="navbar">
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contactus.html">Contact</a></li> </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+        <section class="page-hero-title">
+            <div class="container">
+                <h1 class="abeezee-regular">Get In Touch</h1>
+                <p class="breadcrumb">Home > Contact Us</p>
+            </div>
+        </section>
+    
+        <section class="contact-section">
+            <div class="container contact-grid-container">
+                <div class="contact-details">
+                    <h2 class="section-title">Reach Out to Us</h2>
+                    <p class="section-description">
+                        Have questions or need a custom solution? Our team is ready to help you navigate your digital journey.
+                    </p>
+    
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="text-box">
+                            <h3>Our Office</h3>
+                            <p> Noida, UP 201301</p>
+                        </div>
+                    </div>
+    
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                        <div class="text-box">
+                            <h3>Call Us</h3>
+                            <p>+91 9557408503</p>
+                        </div>
+                    </div>
+    
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                        <div class="text-box">
+                            <h3>Email Us</h3>
+                            <p>info@techyfe.com</p>
+                        </div>
+                    </div>
+    
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fas fa-clock"></i></div>
+                        <div class="text-box">
+                            <h3>Working Hours</h3>
+                            <p>Mon - Fri: 9 AM - 6 PM (IST)</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="contact-form-wrapper">
+                    <h2 class="section-title">Send Us a Message</h2>
+                    <form action="#" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required />
+                        </div>
+    
+                        <div class="form-group">
+                            <select id="requirement" name="requirement" required>
+                                <option value="">Select Your Requirement</option>
+                                <option value="website-development">Website Development</option>
+                                <option value="digital-marketing">Digital Marketing</option>
+                                <option value="mobile-app-development">Mobile App Development</option>
+                                <option value="graphic-design">Graphic Design & Branding</option>
+                                <option value="seo">SEO & Content</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+    
+                        <div class="form-group">
+                            <select id="budget" name="budget" required>
+                                <option value="">Select Your Budget</option>
+                                <option value="1k-5k">$1,000 - $5,000</option>
+                                <option value="5k-10k">$5,000 - $10,000</option>
+                                <option value="10k-25k">$10,000 - $25,000</option>
+                                <option value="25k-50k">$25,000 - $50,000</option>
+                                <option value="50k+">$50,000+</option>
+                                <option value="discuss">To Be Discussed</option>
+                            </select>
+                        </div>
+    
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                        </div>
+    
+    
+                        <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    
+        <section class="map-section">
+            <div class="container">
+                <h2 class="section-title text-center">Find Us on the Map</h2>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.93795292429!2d77.36979667500147!3d28.601569486877994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf699042502f9%3A0x6b42b6a21398c397!2sRana%20Tower%201%2C%20D%20Block%2C%20Sector%2022%2C%20Noida%2C%20Uttar%20Pradesh%20201301%2C%20India!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact-footer" class="footer">
+      <div class="footer-container container">
+        <div class="footer-col">
+          <img src="images/digi-2nd.gif" alt="Techify Logo" class="footer-logo" />
+          <p>
+            If you’re keen on branding online, we’re here to conduct
+            modifications to your business idea. Our innovative team of
+            professionals ensures your online business experiences the road to
+            success.
+          </p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"
+              ><i class="fab fa-x-twitter"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li>Product Development</li>
+            <li>Digital Marketing</li>
+            <li>Website Development</li>
+            <li>App Development</li>
+            <li>Graphic Designing</li>
+            <li>Sales and Strategy</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Further Links</h3>
+          <ul>
+            <li><a href="index.html#clients">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li>Our Blogs</li>
+            <li>Our Portfolio</li>
+            <li>Testimonials</li>
+            <li>Book a Free Demo</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact Info</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Sector-22, Noida, UP 201301
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>Film City Noida, UP 201301
+          </p>
+          <p><i class="fas fa-phone"></i> +91 9557408503</p>
+          <p><i class="fas fa-envelope"></i> info@techyfe.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; Copyright 2024 All Rights Reserved</p>
+        <p>
+          <a href="#">Refund Policy</a> &ndash;
+          <a href="#">Privacy Policy</a> &ndash;
+          <a href="#">Terms & Conditions</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,608 @@
+/* about.css */
+
+/* --- Page Title Section --- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Font styles (for specific elements if needed) */
+.libre-baskerville-regular {
+    font-weight: 400;
+    font-style: normal;
+  }
+  .libre-baskerville-bold {
+    font-weight: 700;
+    font-style: normal;
+  }
+  .libre-baskerville-regular-italic {
+    font-weight: 400;
+    font-style: italic;
+  }
+  .abeezee-regular { /* For specific headings like hero h2 */
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .abeezee-italic {
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+.page-hero-title {
+    background-color: var(--medium-grey); /* Light blue-grey, similar to your process section */
+    padding: 100px 0 60px; /* More padding at top for header space */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* For potential background patterns */
+    color: var(--text-dark);
+}
+
+.page-hero-title h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    font-family: "ABeeZee", sans-serif;
+}
+
+.page-hero-title .breadcrumb {
+    font-size: 1rem;
+    color: var(--text-medium);
+}
+
+/* Optional: Subtle background pattern for page title */
+.page-hero-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0 28V24h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 28V54h-2v4h-4v2h4v4h2v-4h4v-2h-4zM0 34v-4h-2v4H-6v2h4v4h2v-4h4v-2h-4zM0 4v-4H-2v4H-6v2h4v4h2V6h4V4h-4zM0 28V24h-2v4H-6v2h4v4h2v-4h4v-2h-4zM0 58V54h-2v4H-6v2h4v4h2v-4h4v-2h-4zm30 4v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM30 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM30 4v-4h-2v4h-4v2h4v4h2V6h4V4h-4z"%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); /* Subtle SVG pattern */
+    background-repeat: repeat;
+    background-size: 60px 60px;
+    opacity: 0.5; /* Make it very subtle */
+    z-index: 0;
+}
+
+
+/* --- About Us Content Section (Main) --- */
+.about-content-main {
+    padding: 80px 0; /* Vertical spacing for the section */
+    background-color: #fff; /* White background for this content block */
+}
+
+.about-content-inner {
+    display: flex;
+    align-items: flex-start; /* IMPORTANT: Align items to start, not center, for better image positioning */
+    gap: 60px; /* Space between image and text columns */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center items when wrapped */
+}
+
+.about-image-col {
+    flex: 1.2; /* Slightly larger image column */
+    min-width: 350px; /* Minimum width before stacking */
+    position: relative; /* Crucial for absolute positioning of overlap image */
+    /* Remove text-align: center; from here. Let images block display. */
+    padding: 0; /* Ensure no padding interfering */
+}
+
+.main-about-img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    border-radius: 8px; /* Slightly rounded corners */
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+    position: relative; /* Ensure it's part of the flow */
+    z-index: 1; /* Place main image above overlap */
+}
+
+.overlap-about-img {
+    position: absolute; /* Position relative to .about-image-col */
+    bottom: -30px; /* Adjusted to overlap main image, move it below */
+    right: -30px; /* Adjusted to move it further right */
+    width: 250px; /* Increased size slightly for better visibility */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    border: 5px solid #fff; /* White border to stand out */
+    z-index: 2; /* Ensure it overlaps the main image */
+}
+
+.about-text-col {
+    flex: 1; /* Takes remaining space */
+    min-width: 300px; /* Minimum width before stacking */
+    text-align: left;
+    padding-top: 30px; /* Add some top padding to align with the start of the main image */
+}
+
+.about-text-col .subheading {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 1rem;
+    color: var(--accent-pink); /* Pink accent color for subheading */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.about-text-col h2 {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+}
+
+.about-text-col p {
+    font-size: 1rem;
+    font-family: 'Montserrat' sans-serif !important;
+    line-height: 1.7;
+    color: var(--text-medium);
+    margin-bottom: 20px;
+}
+
+.about-us-button {
+    display: inline-flex; /* Use flex for icon alignment */
+    align-items: center;
+    gap: 8px; /* Space between text and icon */
+    margin-top: 20px;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--dark-blue); /* Dark blue button */
+    border: 2px solid var(--dark-blue);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.about-us-button:hover {
+    background-color: transparent;
+    color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+/* --- Responsive Adjustments for About Page --- */
+@media (max-width: 768px) {
+    .page-hero-title {
+        padding: 80px 0 40px;
+    }
+    .page-hero-title h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-content-inner {
+        flex-direction: column; /* Stack image and text vertically */
+        gap: 40px;
+    }
+
+    .about-image-col {
+        min-width: unset; /* Remove min-width constraint */
+        width: 100%; /* Take full width on mobile */
+        margin-bottom: 20px;
+        /* Re-add text-align: center; for mobile if you want images centered */
+        text-align: center;
+    }
+
+    .overlap-about-img {
+        position: static; /* Remove absolute positioning */
+        margin-top: 20px; /* Space from main image */
+        width: 80%; /* Adjust size */
+        left: unset;
+        right: unset;
+        bottom: unset;
+        border: none; /* No border in stacked view */
+        box-shadow: none; /* No shadow in stacked view */
+    }
+
+    .about-text-col {
+        min-width: unset; /* Remove min-width constraint */
+        width: 100%; /* Take full width on mobile */
+        text-align: center; /* Center text on mobile */
+        padding-top: 0; /* Remove top padding for mobile stacking */
+    }
+
+    .about-text-col .subheading {
+        text-align: center;
+    }
+
+    .about-text-col h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .about-text-col p {
+        text-align: center;
+    }
+
+    .about-us-button {
+        width: fit-content; /* Adjust button width */
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center; /* Center content of flex button */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .about-content-inner {
+        gap: 40px;
+    }
+
+    .about-text-col h2 {
+        font-size: 2.4rem;
+    }
+
+    .overlap-about-img {
+        width: 180px; /* Slightly smaller for tablets */
+        bottom: -20px;
+        right: -20px;
+    }
+}
+
+
+/* ------------------------------------leadership--------- */
+/* --- NEW SECTION: The Leadership --- */
+.leadership-section {
+    background-color: var(--light-grey); /* Match the light grey background */
+    padding: 80px 0;
+    text-align: center;
+    position: relative; /* For potential background patterns */
+    overflow: hidden; /* Ensure circles are clipped if needed */
+}
+
+.section-title-leadership {
+    font-size: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-family: "ABeeZee", sans-serif;
+    display: inline-block; /* Allows ::after to position correctly */
+    position: relative;
+    padding-bottom: 10px; /* Space for the underline */
+}
+
+.section-title-leadership::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px; /* Length of the underline */
+    height: 4px; /* Thickness of the underline */
+    background-color: var(--primary-green); /* Green underline */
+    border-radius: 2px;
+}
+
+.leadership-grid {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column; /* Start with column for stacking */
+    gap: 80px; /* Space between each leadership member row */
+}
+
+.leadership-member {
+    display: flex;
+    align-items: center; /* Vertically align image and text */
+    gap: 60px; /* Space between text and image */
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    justify-content: space-between; /* Center items when wrapped */
+    text-align: left;
+}
+
+/* For alternating layout (second member row) */
+.leadership-member.reverse-order {
+    flex-direction: row-reverse; /* Swap image and text order */
+}
+
+.member-text {
+    flex: 1;
+    min-width: 300px; /* Minimum width for text column */
+    max-width: 500px; /* Control max width for readability */
+}
+
+.member-text h3 {
+    font-size: 2.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+    font-family: "ABeeZee", sans-serif;
+}
+
+.member-text .member-title {
+    font-size: 1.1rem;
+    color: var(--primary-green); /* Green for the title */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.member-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-medium);
+}
+
+.member-image-wrapper {
+    position: relative;
+    width: 250px; /* Fixed size for the circular image container */
+    height: 250px;
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden; /* Clip image to circle */
+    flex-shrink: 0; /* Prevent shrinking below fixed size */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    display: flex; /* To center the image inside */
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Fallback/background for the circle */
+}
+
+.member-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container, cropping if necessary */
+    border-radius: 50%; /* Ensure the image itself is circular */
+    display: block;
+    position: relative; /* Ensure it's above pseudo-elements */
+    z-index: 2;
+}
+
+/* Abstract colored shapes using pseudo-elements */
+/* Style 1: Soumya's image (Green main circle, Yellow smaller circle) */
+.member-image-wrapper.style-1::before,
+.member-image-wrapper.style-1::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1; /* Behind the image */
+}
+
+.member-image-wrapper.style-1::before {
+    /* Larger Green Circle */
+    width: 110%; /* Slightly larger than the wrapper */
+    height: 110%;
+    background-color: var(--primary-green); /* Green */
+    top: -5%; /* Adjust position to create partial visibility */
+    right: -5%;
+    opacity: 0.8;
+}
+
+.member-image-wrapper.style-1::after {
+    /* Smaller Yellow Circle */
+    width: 70px; /* Fixed size for small circle */
+    height: 70px;
+    background-color: var(--accent-orange); /* Yellow */
+    bottom: -10px; /* Position it partially outside */
+    left: -10px;
+    opacity: 0.8;
+}
+
+/* Style 2: Shubhhendu's image (Yellow main circle, Green/Dark Blue smaller circle) */
+.member-image-wrapper.style-2::before,
+.member-image-wrapper.style-2::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1; /* Behind the image */
+}
+
+.member-image-wrapper.style-2::before {
+    /* Larger Yellow Circle */
+    width: 110%;
+    height: 110%;
+    background-color: var(--accent-orange); /* Yellow */
+    bottom: -5%;
+    left: -5%;
+    opacity: 0.8;
+}
+
+.member-image-wrapper.style-2::after {
+    /* Smaller Dark Blue/Green Circle */
+    width: 70px;
+    height: 70px;
+    background-color: var(--dark-blue); /* Dark Blue */
+    top: -10px;
+    right: -10px;
+    opacity: 0.8;
+}
+
+
+/* --- Responsive Adjustments for Leadership Section --- */
+@media (max-width: 768px) {
+    .section-title-leadership {
+        font-size: 2.2rem;
+    }
+    .leadership-grid {
+        gap: 50px;
+    }
+    .leadership-member,
+    .leadership-member.reverse-order {
+        flex-direction: column; /* Stack image and text */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .member-text {
+        min-width: unset;
+        max-width: 100%;
+        order: 2; /* Text below image on mobile */
+    }
+    .member-text h3, .member-text .member-title, .member-text p {
+        text-align: center;
+    }
+
+    .member-image-wrapper {
+        order: 1; /* Image above text on mobile */
+        margin: 0 auto; /* Center image */
+        width: 200px; /* Slightly smaller for mobile */
+        height: 200px;
+    }
+
+    /* Adjust pseudo-elements for mobile if needed, or simplify */
+    .member-image-wrapper.style-1::before,
+    .member-image-wrapper.style-2::before {
+        width: 105%;
+        height: 105%;
+    }
+
+    .member-image-wrapper.style-1::after,
+    .member-image-wrapper.style-2::after {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .leadership-member {
+        gap: 40px;
+    }
+    .member-text h3 {
+        font-size: 1.8rem;
+    }
+    .member-text .member-title {
+        font-size: 1rem;
+    }
+    .member-image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+    .member-image-wrapper.style-1::after,
+    .member-image-wrapper.style-2::after {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* --- NEW SECTION: Why Choose Us --- */
+.why-choose-us-section {
+    background-color: #fff; /* White background */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title-why {
+    font-size: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-family: "ABeeZee", sans-serif;
+    display: inline-block; /* For the custom underline */
+    position: relative;
+    padding-bottom: 10px; /* Space for the underline */
+}
+
+.section-title-why::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100px; /* Length of the underline */
+    height: 4px; /* Thickness */
+    background-color: var(--accent-orange); /* Use yellow/orange for this underline */
+    border-radius: 2px;
+}
+
+.section-description-why {
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    max-width: 800px;
+    margin: 0 auto 60px;
+    line-height: 1.8;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3 or 4 columns, responsive */
+    gap: 40px; /* Space between cards */
+    justify-content: center; /* Center cards if less than full row */
+}
+
+.feature-card {
+    background-color: var(--light-grey); /* Light grey background for cards */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Stronger shadow for depth */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure anything overflowing is hidden */
+    position: relative; /* For potential internal elements */
+}
+
+.feature-card:hover {
+    transform: translateY(-10px); /* Lift significantly on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    margin: 0 auto 25px auto; /* Center circle and space below */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2; /* Bring icon circle above any subtle background */
+}
+
+/* Specific colors for icon circles */
+.icon-circle.style-green {
+    background-color: var(--primary-green);
+    color: #fff;
+}
+.icon-circle.style-yellow {
+    background-color: var(--accent-orange); /* Using accent-orange for yellow */
+    color: var(--text-dark); /* Dark text for contrast */
+}
+.icon-circle.style-pink {
+    background-color: var(--accent-pink);
+    color: #fff;
+}
+.icon-circle.style-blue {
+    background-color: var(--dark-blue);
+    color: #fff;
+}
+
+.feature-card h3 {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    line-height: 1.7;
+}
+
+/* --- Responsive Adjustments for Why Choose Us --- */
+@media (max-width: 768px) {
+    .section-title-why {
+        font-size: 2.2rem;
+    }
+    .features-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 30px;
+    }
+    .feature-card {
+        padding: 25px;
+    }
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .feature-card h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+        gap: 30px;
+    }
+    .section-title-why {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,636 @@
+/* services.css */
+
+
+
+/* --- Page Title Section (Copied from about.css for consistency) --- */
+.page-hero-title {
+    background-color: var(--medium-grey); /* Light blue-grey, similar to your process section */
+    padding: 100px 0 60px; /* More padding at top for header space */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* For potential background patterns */
+    color: var(--text-dark);
+}
+
+.page-hero-title h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    font-family: "ABeeZee", sans-serif;
+}
+
+.page-hero-title .breadcrumb {
+    font-size: 1rem;
+    color: var(--text-medium);
+}
+
+/* Subtle background pattern for page title (copied from about.css) */
+.page-hero-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zm0 28V24h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 28V54h-2v4h-4v2h4v4h2v-4h4v-2h-4zM0 34v-4h-2v4H-6v2h4v4h2v-4h4v-2h-4zM0 4v-4H-2v4H-6v2h4v4h2V6h4V4h-4zM0 28V24h-2v4H-6v2h4v4h2v-4h4v-2h-4zM0 58V54h-2v4H-6v2h4v4h2v-4h4v-2h-4zm30 4v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM30 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM30 4v-4h-2v4h-4v2h4v4h2V6h4V4h-4z"%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    background-repeat: repeat;
+    background-size: 60px 60px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* --- Services Grid Main Section --- */
+.services-grid-main {
+    background-color: #fff; /* White background for the main content */
+    padding: 80px 0;
+}
+
+.services-grid-wrapper {
+    display: grid;
+    /* This creates a 3-column layout on large screens,
+       2 columns on medium screens, and 1 column on small screens */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Space between cards */
+    justify-content: center; /* Center the grid items if they don't fill the row */
+}
+
+.service-card-item {
+    background-color: var(--light-grey); /* Light grey background for cards */
+    border-radius: 12px;
+    overflow: hidden; /* Ensures image corners are rounded */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Make content stack */
+    flex-direction: column;
+}
+
+.service-card-item:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+}
+
+.service-card-image {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent image size */
+    overflow: hidden;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    display: block;
+    transition: transform 0.3s ease; /* Smooth zoom on hover */
+}
+
+.service-card-item:hover .service-card-image img {
+    transform: scale(1.05); /* Slight zoom on image hover */
+}
+
+.service-card-content {
+    padding: 25px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content area to expand */
+}
+
+.service-card-content h3 {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.service-card-content p {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows paragraph to take available space */
+}
+
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-green); /* Green color for the button */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin-top: auto; /* Pushes button to the bottom if content varies */
+}
+
+.read-more-btn:hover {
+    color: var(--accent-pink); /* Pink on hover */
+    transform: translateX(5px); /* Slight movement */
+}
+
+.read-more-btn i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+
+/* --- Responsive Adjustments for Services Page --- */
+@media (max-width: 768px) {
+    .page-hero-title {
+        padding: 80px 0 40px;
+    }
+    .page-hero-title h1 {
+        font-size: 2.5rem;
+    }
+    .services-grid-wrapper {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 25px;
+    }
+    .service-card-item {
+        margin: 0 auto; /* Center cards */
+        max-width: 400px; /* Max width for mobile cards */
+    }
+    .service-card-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-grid-wrapper {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+        gap: 25px;
+    }
+}
+
+/* services.css */
+
+/* ... (your existing styles for .page-hero-title and .services-grid-main) ... */
+
+
+/* --- NEW SECTION: SEOX Interesting Facts --- */
+.seox-facts-section {
+    background-color: #2ecc71; /* Dark background as seen in image_e1e654.jpg */
+    /* You can also use a background-image if you have the texture from the image: */
+    /* background-image: url('path/to/your/texture.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    padding: 80px 0;
+    color: #fff; /* White text for contrast */
+    text-align: center;
+}
+
+.seox-facts-heading {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: var(--light-grey); /* Lighter text for the sub-heading */
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.seox-facts-heading i {
+    font-size: 1.5rem;
+    color: #f3b60e; /* A contrasting color for the icon, like your primary green */
+}
+
+.facts-grid {
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    gap: 40px 20px; /* Gap between rows and columns */
+}
+
+.fact-item {
+    flex: 1 1 180px; /* Flex-grow, flex-shrink, basis. Allows items to grow/shrink but not get smaller than 180px before wrapping */
+    max-width: 200px; /* Max width for each item */
+    text-align: center;
+    padding: 10px;
+}
+
+.fact-number {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 3.5rem; /* Large font size for the numbers */
+    font-weight: bold;
+    color: #fff; /* White color as in the image */
+    line-height: 1.2;
+    margin-bottom: 5px;
+    display: block; /* Ensures margin works */
+}
+
+.fact-description {
+    font-size: 0.95rem;
+    color: var(--light-grey); /* Slightly muted white for description */
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+/* --- Responsive Adjustments for SEOX Interesting Facts --- */
+@media (max-width: 992px) {
+    .facts-grid {
+        gap: 30px 15px;
+    }
+    .fact-number {
+        font-size: 3rem;
+    }
+    .fact-item {
+        flex: 1 1 150px; /* Adjust basis for slightly smaller screens */
+        max-width: 170px;
+    }
+}
+
+@media (max-width: 768px) {
+    .seox-facts-section {
+        padding: 60px 0;
+    }
+    .seox-facts-heading {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    .facts-grid {
+        flex-direction: column; /* Stack facts vertically on small screens */
+        align-items: center; /* Center items when stacked */
+        gap: 40px;
+    }
+    .fact-item {
+        max-width: 250px; /* Allow wider item when stacked */
+        width: 100%; /* Take full width on very small screens */
+    }
+    .fact-number {
+        font-size: 3.2rem; /* Keep numbers prominent */
+    }
+}
+
+@media (max-width: 480px) {
+    .fact-number {
+        font-size: 2.8rem;
+    }
+    .fact-description {
+        font-size: 0.85rem;
+    }
+}
+/* services.css */
+
+/* ... (your existing styles for .page-hero-title and .services-grid-main) ... */
+
+/* --- SEOX Interesting Facts (with grid background) --- */
+.seox-facts-section {
+    /* Changing background to use the repeating linear gradient for the grid pattern */
+    background-color: #1a202c; /* A dark blue/charcoal base color */
+    margin-bottom: 50px;
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.05) 0px,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px,
+        transparent 20px
+
+    ),
+    repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 0px,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px,
+        transparent 20px
+    );
+    background-size: 20px 20px; /* Size of each grid square */
+    padding: 80px 0;
+    color: #fff; /* White text for contrast */
+    text-align: center;
+}
+
+.seox-facts-heading {
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-family: "ABeeZee" sans-serif;
+    color: var(--light-grey); /* Lighter text for the sub-heading */
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.seox-facts-heading i {
+    font-size: 1.5rem;
+    color: var(--primary-green); /* A contrasting color for the icon, like your primary green */
+}
+
+.facts-grid {
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    gap: 40px 20px; /* Gap between rows and columns */
+}
+
+.fact-item {
+    flex: 1 1 180px; /* Flex-grow, flex-shrink, basis. Allows items to grow/shrink but not get smaller than 180px before wrapping */
+    max-width: 200px; /* Max width for each item */
+    text-align: center;
+    padding: 10px;
+}
+
+.fact-number {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 3.5rem; /* Large font size for the numbers */
+    font-weight: bold;
+    color: #fff; /* White color as in the image */
+    line-height: 1.2;
+    margin-bottom: 5px;
+    display: block; /* Ensures margin works */
+}
+
+.fact-description {
+    font-size: 0.95rem;
+    color: var(--light-grey); /* Slightly muted white for description */
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+/* Responsive Adjustments for SEOX Interesting Facts */
+@media (max-width: 992px) {
+    .facts-grid {
+        gap: 30px 15px;
+    }
+    .fact-number {
+        font-size: 3rem;
+    }
+    .fact-item {
+        flex: 1 1 150px; /* Adjust basis for slightly smaller screens */
+        max-width: 170px;
+    }
+}
+
+@media (max-width: 768px) {
+    .seox-facts-section {
+        padding: 60px 0;
+    }
+    .seox-facts-heading {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    .facts-grid {
+        flex-direction: column; /* Stack facts vertically on small screens */
+        align-items: center; /* Center items when stacked */
+        gap: 40px;
+    }
+    .fact-item {
+        max-width: 250px; /* Allow wider item when stacked */
+        width: 100%; /* Take full width on very small screens */
+    }
+    .fact-number {
+        font-size: 3.2rem; /* Keep numbers prominent */
+    }
+}
+
+@media (max-width: 480px) {
+    .fact-number {
+        font-size: 2.8rem;
+    }
+    .fact-description {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* --- NEW SECTION: Meet Our Awesome People (Team Section) --- */
+.team-section {
+    background-color: #6637ed; /* A deep purple based on image_e1811d.jpg */
+    padding: 80px 0;
+    text-align: center;
+    position: relative; /* For background elements if needed */
+    overflow: hidden; /* Hide any overflowing elements */
+    margin-bottom: 50px;
+}
+
+/* Background patterns (example, adjust paths as needed) */
+.team-section::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    width: 150px;
+    height: 150px;
+    background-image: url('./images/shaps-5.png'); /* Replace with your grid pattern image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    font-family: "Montserrat"
+    ;
+    z-index: 1;
+}
+
+.team-section::after {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    font-family: "Montserrat"
+    ;
+    right: 2%;
+    width: 200px;
+    height: 100px;
+    background-image: url('/images/squiggle-line.png'); /* Replace with your squiggle line image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+
+.team-main-heading {
+    font-size: 3.5rem; /* Larger heading */
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2; /* Ensure text is above background patterns */
+}
+
+.team-sub-heading {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    max-width: 800px;
+    margin: 0 auto 60px;
+    font-family: "Montserrat"
+    ;
+    line-height: 1.8;
+    position: relative;
+    z-index: 2;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center; /* Center the cards */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 30px; /* Space between cards */
+    position: relative;
+    z-index: 2;
+}
+
+.team-member-card {
+    background-color:   #eaf1fc; /* Slightly lighter purple for card background */
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 320px; /* Fixed width for cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: "Montserrat"
+    ;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Essential for overlay */
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.member-image-wrapper {
+    width: 180px; /* Size of the circular image */
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 25px;
+    border: 5px solid #fff; /* White border around image */
+    position: relative; /* For social icons overlay */
+    background-color: #ccc; /* Fallback/loading background */
+}
+
+.member-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.social-icons-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.member-image-wrapper:hover .social-icons-overlay {
+    opacity: 1;
+}
+
+.social-icons-overlay a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+.social-icons-overlay a:hover {
+    color: var(--primary-green); /* Hover color for social icons */
+}
+
+
+.member-info {
+    width: 100%;
+}
+
+.member-role {
+    font-size: 0.95rem;
+    color: #000; /* Green for the role */
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.member-name {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.member-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 1rem;
+    gap: 8px;
+    border: 1px solid #6637ed;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.member-contact i {
+    color: var(--primary-green);
+    font-size: 1.1rem;
+}
+
+/* Responsive adjustments for Team Section */
+@media (max-width: 992px) {
+    .team-main-heading {
+        font-size: 3rem;
+    }
+    .team-member-card {
+        width: 300px;
+        padding: 25px 15px;
+    }
+    .member-image-wrapper {
+        width: 160px;
+        height: 160px;
+    }
+    .member-name {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-main-heading {
+        font-size: 2.5rem;
+    }
+    .team-sub-heading {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    .team-grid {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+        gap: 25px;
+    }
+    .team-member-card {
+        width: 85%; /* Adjust width to fit smaller screens better */
+        max-width: 320px; /* Keep max-width for larger small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-main-heading {
+        font-size: 2rem;
+    }
+    .team-section {
+        padding: 50px 0;
+    }
+    .member-image-wrapper {
+        width: 140px;
+        height: 140px;
+    }
+    .social-icons-overlay a {
+        font-size: 1.3rem;
+    }
+    .member-name {
+        font-size: 1.4rem;
+    }
+    .member-contact {
+        font-size: 0.9rem;
+    }
+}

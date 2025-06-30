@@ -1,0 +1,419 @@
+/* contact.css */
+
+/* Page Hero Title - Reusing common style from services/about/blog for consistency */
+.page-hero-title {
+    background-color: #eaf1fc; /* Assuming you have --dark-blue variable */
+    color: #fff;
+    padding: 80px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-family: "ABeeZee", sans-serif;
+}
+
+.page-hero-title h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: #343434;
+}
+
+.page-hero-title .breadcrumb {
+    font-size: 1rem;
+    opacity: 0.8;
+    color: #595c5d;
+}
+
+/* Contact Section (Contact Details & Form) */
+.contact-section {
+    background-color: var(--light-grey); /* Light background for the section */
+    padding: 80px 0;
+}
+
+.contact-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Contact details on left, form on right */
+    gap: 60px; /* Space between columns */
+    align-items: start; /* Align content to the top */
+}
+
+.contact-details,
+.contact-form-wrapper {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contact-section .section-title {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 2.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.contact-section .section-description {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-family: 'Montserrat';
+}
+
+/* Contact Info Items */
+.info-item {
+    display: flex;
+    align-items: flex-start; /* Align icon and text to top if text wraps */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.info-item .icon-box {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-green);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 5px 15px rgba(0, 128, 0, 0.2); /* Subtle green shadow */
+}
+
+.info-item .text-box h3 {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 1.3rem;
+    color: var(--dark-blue);
+    margin-bottom: 5px;
+}
+
+.info-item .text-box p {
+    font-size: 1rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    font-family: 'Montserrat';
+}
+
+
+/* Contact Form */
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid var(--border-color); /* Assuming --border-color */
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'ABeeZee', sans-serif; /* Consistent font */
+    color: var(--text-dark);
+    background-color: #f9f9f9; /* Slightly off-white for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(0, 128, 0, 0.1); /* Light green focus ring */
+    outline: none;
+    background-color: #fff;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px;
+}
+
+.contact-form .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-green);
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: var(--dark-blue); /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+
+/* Google Map Section */
+.map-section {
+    padding: 60px 0 80px;
+    background-color: #f0f2f5; /* A light grey background for map section */
+}
+
+.map-section .section-title {
+    font-family: "ABeeZee", sans-serif;
+    font-size: 2.2rem;
+    color: var(--dark-blue);
+    margin-bottom: 40px;
+}
+
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100) */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* --- Responsive Adjustments for Contact Page --- */
+@media (max-width: 992px) {
+    .contact-grid-container {
+        grid-template-columns: 1fr; /* Stack columns on tablets */
+        gap: 40px;
+    }
+
+    .contact-details,
+    .contact-form-wrapper {
+        padding: 30px;
+    }
+
+    .contact-section .section-title {
+        font-size: 2rem;
+    }
+
+    .contact-section .section-description {
+        margin-bottom: 30px;
+    }
+
+    .info-item {
+        margin-bottom: 25px;
+    }
+
+    .map-section .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero-title h1 {
+        font-size: 2.8rem;
+    }
+    .contact-section {
+        padding: 60px 0;
+    }
+
+    .contact-details,
+    .contact-form-wrapper {
+        padding: 25px;
+    }
+
+    .contact-section .section-title {
+        font-size: 1.8rem;
+    }
+
+    .info-item .icon-box {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    .info-item .text-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .info-item .text-box p {
+        font-size: 0.95rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    .contact-form .submit-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .map-section {
+        padding: 40px 0 60px;
+    }
+    .map-section .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero-title h1 {
+        font-size: 2.2rem;
+    }
+    .page-hero-title .breadcrumb {
+        font-size: 0.9rem;
+    }
+    .contact-section {
+        padding: 40px 0;
+    }
+
+    .contact-details,
+    .contact-form-wrapper {
+        padding: 20px;
+    }
+
+    .contact-section .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-section .section-description {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .info-item {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .info-item .icon-box {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .info-item .text-box h3 {
+        font-size: 1.1rem;
+    }
+
+    .info-item .text-box p {
+        font-size: 0.9rem;
+    }
+
+    .map-section .section-title {
+        font-size: 1.6rem;
+    }
+}
+/* contact.css */
+
+/* ... (Your existing CSS for .page-hero-title, .contact-section, .contact-grid-container, etc.) ... */
+
+/* Styles for Form Inputs and Textarea (existing, but ensure consistency) */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea,
+/* NEW: Add select to this list */
+.contact-form select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid var(--border-color); /* Assuming --border-color */
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Montserrat'; /* Consistent font */
+    color: var(--text-dark);
+    background-color: #f9f9f9; /* Slightly off-white for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-appearance: none; /* Remove default dropdown arrow on WebKit browsers */
+    -moz-appearance: none;    /* Remove default dropdown arrow on Mozilla browsers */
+    appearance: none;         /* Remove default dropdown arrow */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus { /* NEW: Add select to focus styles */
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(0, 128, 0, 0.1); /* Light green focus ring */
+    outline: none;
+    background-color: #fff;
+}
+
+/* Specific styling for select dropdowns to add custom arrow */
+.form-group select {
+    /* Adding a custom arrow for select fields */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="%23333"><polygon points="0,0 10,0 5,10"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px;
+    cursor: pointer;
+}
+
+/* Style for placeholder/default option in select */
+.form-group select option[value=""] {
+    color: var(--text-medium);
+}
+
+/* Captcha specific styles */
+.captcha-group {
+    background-color: #f0f0f0; /* Light background for captcha for visibility */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px; /* Adjust margin as needed */
+    border: 1px dashed var(--border-color); /* Dashed border for distinct look */
+}
+
+.captcha-group .captcha-question {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.captcha-group input[type="text"] {
+    background-color: #fff; /* White background for captcha input */
+    border: 1px solid var(--border-color);
+    padding: 12px 15px; /* Slightly smaller padding for captcha input */
+}
+
+.captcha-group small {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-medium);
+    margin-top: 8px;
+}
+
+/* Responsive adjustments for form fields */
+@media (max-width: 768px) {
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea,
+    .contact-form select { /* Ensure select fields scale */
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea,
+    .contact-form select {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    .captcha-group {
+        padding: 10px;
+    }
+   
+}
+
+/* ... (Rest of your existing contact.css styles) ... */

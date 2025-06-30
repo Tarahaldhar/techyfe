@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Techify Digital Agency</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="blog.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-content container">
+        <h1 class="logo">Techify</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="navbar">
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li> <li><a href="index.html#contact-footer">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero-title">
+        <div class="container">
+          <h1 class="abeezee-regular">Our Blog</h1>
+          <p class="breadcrumb">Home &gt; Blog</p>
+        </div>
+      </section>
+
+      <section class="blog-main-content">
+        <div class="container blog-grid-container">
+          <div class="blog-posts-listing">
+            <article class="blog-post-card">
+              <div class="post-image">
+                <img src="/images/about-page-sec1-image1.png" alt="Future of AI in Tech" />
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span><i class="far fa-calendar-alt"></i> June 10, 2025</span>
+                  <span><i class="fas fa-user"></i> Techify Team</span>
+                  <span><i class="fas fa-tag"></i> AI, Technology</span>
+                </div>
+                <h2 class="post-title">The Future of AI in Digital Marketing</h2>
+                <p class="post-excerpt">
+                  Artificial intelligence is rapidly transforming the digital marketing landscape, offering unprecedented opportunities for personalization, automation, and predictive analytics. Explore how AI is reshaping strategies...
+                </p>
+                <a href="#" class="read-more-btn-blog">Read More <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </article>
+
+            <article class="blog-post-card">
+              <div class="post-image">
+                <img src="/images/about-page-sec1-image2.png" alt="SEO Strategies" />
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span><i class="far fa-calendar-alt"></i> June 05, 2025</span>
+                  <span><i class="fas fa-user"></i> John Doe</span>
+                  <span><i class="fas fa-tag"></i> SEO, Marketing</span>
+                </div>
+                <h2 class="post-title">Mastering SEO: Essential Strategies for 2025</h2>
+                <p class="post-excerpt">
+                  Search Engine Optimization continues to evolve, making it crucial for businesses to adapt their strategies. Discover the key SEO trends and techniques that will drive organic traffic this year...
+                </p>
+                <a href="#" class="read-more-btn-blog">Read More <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </article>
+
+            <article class="blog-post-card">
+              <div class="post-image">
+                <img src="/images/about-page-sec1-image1.png" alt="Web Design Trends" />
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span><i class="far fa-calendar-alt"></i> May 28, 2025</span>
+                  <span><i class="fas fa-user"></i> Jane Smith</span>
+                  <span><i class="fas fa-tag"></i> Web Design, UI/UX</span>
+                </div>
+                <h2 class="post-title">Top Web Design Trends to Watch in the Coming Year</h2>
+                <p class="post-excerpt">
+                  Stay ahead in the digital world with insights into the latest web design trends. From minimalist interfaces to immersive experiences, learn what's next for user-centric design...
+                </p>
+                <a href="#" class="read-more-btn-blog">Read More <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </article>
+
+            <div class="pagination">
+              <a href="#" class="pagination-link active">1</a>
+              <a href="#" class="pagination-link">2</a>
+              <a href="#" class="pagination-link">3</a>
+              <a href="#" class="pagination-link"><i class="fas fa-angle-right"></i></a>
+            </div>
+          </div>
+
+          <aside class="blog-sidebar">
+            <div class="sidebar-widget search-widget">
+              <h3>Search</h3>
+              <div class="search-box">
+                <input type="text" placeholder="Search articles..." />
+                <button type="submit"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+
+            <div class="sidebar-widget categories-widget">
+              <h3>Categories</h3>
+              <ul>
+                <li><a href="#">Digital Marketing (7)</a></li>
+                <li><a href="#">SEO (5)</a></li>
+                <li><a href="#">Web Development (9)</a></li>
+                <li><a href="#">Mobile Apps (3)</a></li>
+                <li><a href="#">Branding (4)</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-widget recent-posts-widget">
+              <h3>Recent Posts</h3>
+              <ul>
+                <li>
+                  <a href="#">
+                    <div class="recent-post-image">
+                      <img src="/images/about-page-sec1-image2.png" alt="Recent Post 1" />
+                    </div>
+                    <div class="recent-post-info">
+                      <h4>Impact of AI on Content Creation</h4>
+                      <span><i class="far fa-calendar-alt"></i> June 12, 2025</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="recent-post-image">
+                      <img src="/images/about-page-sec1-image2.png" alt="Recent Post 2" />
+                    </div>
+                    <div class="recent-post-info">
+                      <h4>Future of E-commerce Design</h4>
+                      <span><i class="far fa-calendar-alt"></i> June 08, 2025</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="recent-post-image">
+                      <img src="/images/about-page-sec1-image2.png" alt="Recent Post 3" />
+                    </div>
+                    <div class="recent-post-info">
+                      <h4>Choosing the Right Social Media Platform</h4>
+                      <span><i class="far fa-calendar-alt"></i> May 30, 2025</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-widget tags-widget">
+              <h3>Tags</h3>
+              <div class="tag-list">
+                <a href="#">Marketing</a>
+                <a href="#">SEO</a>
+                <a href="#">WebDev</a>
+                <a href="#">Apps</a>
+                <a href="#">Branding</a>
+                <a href="#">Content</a>
+                <a href="#">AI</a>
+                <a href="#">UI/UX</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact-footer" class="footer">
+      <div class="footer-container container">
+        <div class="footer-col">
+          <img src="images/digi-2nd.gif" alt="Techify Logo" class="footer-logo" />
+          <p>
+            If you’re keen on branding online, we’re here to conduct
+            modifications to your business idea. Our innovative team of
+            professionals ensures your online business experiences the road to
+            success.
+          </p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"
+              ><i class="fab fa-x-twitter"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li>Product Development</li>
+            <li>Digital Marketing</li>
+            <li>Website Development</li>
+            <li>App Development</li>
+            <li>Graphic Designing</li>
+            <li>Sales and Strategy</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Further Links</h3>
+          <ul>
+            <li><a href="index.html#clients">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li>Our Blogs</li>
+            <li>Our Portfolio</li>
+            <li>Testimonials</li>
+            <li>Book a Free Demo</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact Info</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Sector-22, Noida, UP 201301
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Rana Tower-1, D Block, Sector
+            22, Noida, UP 201301
+          </p>
+          <p><i class="fas fa-phone"></i> +91 9557408503</p>
+          <p><i class="fas fa-envelope"></i> info@techyfe.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; Copyright 2024 All Rights Reserved</p>
+        <p>
+          <a href="#">Refund Policy</a> &ndash;
+          <a href="#">Privacy Policy</a> &ndash;
+          <a href="#">Terms & Conditions</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

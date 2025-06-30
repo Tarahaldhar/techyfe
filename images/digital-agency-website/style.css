@@ -1,0 +1,761 @@
+/* --- Global Styles & Font Imports --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-green: #2ecc71;
+  --accent-pink: #ff008c;
+  --accent-orange: #f3b60e; /* This is the #f9de33 you used earlier */
+  --dark-blue: #0e284e;
+  --light-grey: #f4f4f4;
+  --medium-grey: #eaf1fc;
+  --text-dark: #333;
+  --text-medium: #555;
+  --text-light: #ccc;
+  --footer-bg: #222;
+}
+
+body {
+  font-family: 'Libre Baskerville', serif; /* Primary font for the body */
+  line-height: 1.6;
+  background: var(--light-grey);
+  color: var(--text-dark);
+}
+
+/* Font styles (for specific elements if needed) */
+.libre-baskerville-regular {
+  font-weight: 400;
+  font-style: normal;
+}
+.libre-baskerville-bold {
+  font-weight: 700;
+  font-style: normal;
+}
+.libre-baskerville-regular-italic {
+  font-weight: 400;
+  font-style: italic;
+}
+.abeezee-regular { /* For specific headings like hero h2 */
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.abeezee-italic {
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* --- Container for max-width and centering --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Added horizontal padding for responsiveness */
+}
+
+/* --- Header --- */
+header {
+  background: transparent; /* As per original */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0; /* Padding handled by container */
+  z-index: 10;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif; /* Keeping original font family for header elements */
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: black; /* As per original */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: black; /* As per original */
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif; /* As per original */
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--accent-pink); /* Hover effect */
+}
+
+/* --- Hero Section --- */
+.hero {
+  background: url("images/digi-web-banner3.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center; /* Vertically center content */
+  position: relative;
+  text-align: start;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2); /* Light transparent overlay for text visibility */
+  z-index: 1;
+}
+
+.hero-inner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Space between image and text */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center; /* Center items when wrapped */
+  width: 100%; /* Ensure it takes full width within container */
+  margin-top: 50px; /* Pushed down to avoid header overlap */
+}
+
+.hero-image-col {
+  /* flex: 1; already commented in HTML */
+  /* min-width: 300px; this was on the image col, but it's now the text col */
+  text-align: center;
+  order: 2; /* Ensures image comes after text on larger screens */
+}
+
+.hero-image-col img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Remove extra space below image */
+}
+
+.hero-text-col {
+  flex: 1;
+  min-width: 300px; /* Ensure text column doesn't get too small */
+  text-align: left; /* Align text to left within its column */
+  order: 1; /* Ensures text comes before image on larger screens */
+}
+
+.hero h2 {
+  font-size: 5rem;
+  line-height: 1.1; /* Adjusted line height */
+  font-family: "ABeeZee", sans-serif; /* Use ABeeZee for this heading */
+  color: var(--text-dark); /* Ensure text is dark and visible on light overlay */
+  margin-left: 0; /* Remove specific margin, rely on column gap */
+}
+
+/* --- Hero Section --- */
+/* ... other hero styles ... */
+
+.hero-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff; /* Changed text color to white for better contrast on dark blue */
+  background-color: var(--dark-blue); /* Updated to dark blue */
+  border: 2px solid var(--dark-blue); /* Updated to dark blue */
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: transparent;
+  color: var(--dark-blue); /* Updated to dark blue */
+  border-color: var(--dark-blue); /* Updated to dark blue */
+}
+
+/* Responsive adjustments for hero button */
+@media (max-width: 768px) {
+  .hero-button {
+      padding: 12px 30px;
+      font-size: 1rem;
+      margin-top: 20px;
+  }
+}
+
+
+/* --- What We Do Section --- */
+.what-we-do {
+  padding: 80px 0; /* Vertical padding, horizontal handled by container */
+  background-color: var(--light-grey);
+}
+
+.what-we-do-inner-content {
+  display: flex;
+  gap: 60px; /* Space between left section and cards */
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  justify-content: center; /* Center items when wrapped */
+  font-family: 'Montserrat', sans-serif; /* As per original */
+}
+
+.what-we-do-left {
+  flex: 1;
+  min-width: 250px; /* Ensure it doesn't get too small */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.what-we-do-left h1 {
+  font-size: 7rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-dark);
+}
+
+.what-we-do-left .green {
+  color: var(--primary-green);
+}
+
+.what-we-do-cards {
+  flex: 2;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap; /* Allow cards to wrap */
+  justify-content: center; /* Center cards when wrapped */
+}
+
+.card {
+  flex: 1;
+  min-width: 300px; /* Minimum width for cards */
+  background: #fff; /* Card background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.card h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+.card .dot {
+  color: black; /* Specific color for dot */
+}
+
+.underline {
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-pink);
+  border: none;
+  margin: 10px 0 20px 0; /* Adjusted margin */
+}
+
+.italic {
+  font-style: italic;
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444; /* Specific text color for paragraph */
+  margin-bottom: 20px;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 10px; /* Adjusted margin */
+  font-weight: 700;
+  color: black;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.link span {
+  color: var(--primary-green);
+  margin-left: 5px;
+  transition: margin-left 0.3s ease;
+}
+
+.link:hover {
+  color: var(--accent-pink);
+}
+
+.link:hover span {
+  margin-left: 10px; /* Slight movement on arrow */
+}
+
+/* --- Services Grid --- */
+.services-grid {
+  padding: 0; /* Vertical padding handled by container's default */
+}
+
+.service-grid-inner-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0; /* No gap between grid items */
+  width: 100%; /* Ensure it takes full width within container */
+}
+
+.service-item {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: scale(1.02);
+}
+
+.service-item .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 20px;
+}
+
+.service-item:hover .overlay {
+  opacity: 1;
+}
+
+/* --- NEW SECTION: Our Process --- */
+.our-process-section {
+  background-color: var(--medium-grey); /* Light blue-grey background */
+  padding: 80px 0;
+  text-align: center;
+}
+
+.our-process-section .section-title {
+  font-family: "ABeeZee", sans-serif;
+  font-size: 3rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.our-process-section .section-description {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  color: var(--text-medium);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Two columns on larger screens */
+  gap: 60px 40px; /* Vertical and horizontal gap */
+  text-align: left;
+}
+
+.process-item {
+  display: flex;
+  align-items: flex-start; /* Align number and content to the top */
+  gap: 20px;
+  position: relative;
+  padding-left: 10px; /* Space for the number's position */
+}
+
+.process-number {
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.08); /* Very light, subtle grey */
+  line-height: 1;
+  position: absolute;
+  left: 0;
+  top: -10px; /* Adjust position to overlap slightly */
+  z-index: 1;
+}
+
+.process-content {
+  position: relative;
+  z-index: 2; /* Ensure content is above the number */
+  padding-left: 70px; /* Space for the number to be 'behind' */
+}
+
+.process-icon {
+  font-size: 2.5rem;
+  color: var(--accent-pink); /* Use accent color for icons */
+  margin-bottom: 15px;
+  background: #fff; /* White background for icon circle */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.process-item h3 {
+  font-family: "ABeeZee", sans-serif;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.process-item p {
+  font-size: 1rem;
+  color: var(--text-medium);
+  line-height: 1.7;
+}
+
+/* --- Clients Section --- */
+.clients-section {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 60px 0; /* Vertical padding, horizontal handled by container */
+  font-family: 'Montserrat', sans-serif; /* As per original */
+}
+
+.clients-section h2 {
+  font-size: 36px;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.clients-section p {
+  font-size: 16px;
+  color: var(--text-medium);
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.client-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjusted minmax for smaller logos */
+  gap: 25px;
+  justify-items: center;
+}
+
+.logo-card {
+  background: #fff; /* Changed to white for contrast */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.logo-card:hover {
+  transform: scale(1.05);
+}
+
+.logo-card img {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+}
+
+/* --- Footer --- */
+.footer {
+  background: url('bg-pattern.png'), var(--dark-blue);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  padding: 60px 0 20px; /* Vertical padding, horizontal handled by container */
+  font-family: 'Montserrat', sans-serif; /* As per original */
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minmax for footer columns */
+  gap: 40px;
+  text-align: left;
+  width: 100%; /* Ensure it takes full width within container */
+}
+
+.footer-logo {
+  width: 60px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.1); /* Placeholder if image is empty */
+  height: 60px;
+  display: block;
+  border-radius: 8px;
+}
+
+.footer-col h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-col p,
+.footer-col li {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  color: var(--text-light);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--accent-orange);
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 18px;
+  color: white;
+  background: var(--footer-bg);
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.social-icons a:hover {
+  background: var(--accent-orange);
+}
+
+.footer-col i {
+  margin-right: 8px;
+  color: var(--accent-orange);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.footer-bottom a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+/* --- Responsive Adjustments --- */
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none; /* Hidden by default on larger screens */
+  font-size: 28px;
+  color: black; /* Ensure it's visible on the header */
+  cursor: pointer;
+  z-index: 11;
+}
+
+@media (max-width: 768px) {
+  /* Header & Navigation */
+  .menu-toggle {
+      display: block; /* Show menu toggle on small screens */
+  }
+
+  .header-content {
+      flex-wrap: wrap; /* Allow logo and toggle to wrap if needed */
+      justify-content: space-between;
+  }
+
+  nav ul {
+      flex-direction: column;
+      background-color: #fff;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      width: 200px;
+      display: none; /* Hide by default on mobile */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul li {
+      margin: 15px 0;
+  }
+
+  nav ul li a {
+      color: var(--text-dark); /* Darker text for mobile menu */
+  }
+
+  nav.active ul {
+      display: block; /* Show menu when active */
+  }
+
+  /* Hero Section */
+  .hero h2 {
+      font-size: 2.5rem; /* Adjusted for smaller screens */
+      text-align: center; /* Center text on mobile */
+      width: 100%; /* Take full width */
+  }
+
+  .hero-image-col {
+      width: auto;
+      margin-bottom: 20px; /* Space between image and text */
+      order: 2; /* Keep image at bottom on mobile */
+  }
+
+  .hero-text-col {
+      width: 100%;
+      text-align: center; /* Center text on mobile */
+      order: 1; /* Keep text at top on mobile */
+  }
+
+  .hero-inner-content {
+      flex-direction: column; /* Stack image and text vertically */
+      padding-top: 100px; /* Add padding to prevent header overlap */
+  }
+
+  /* What We Do Section */
+  .what-we-do-inner-content {
+      flex-direction: column; /* Stack sections vertically */
+      gap: 40px;
+  }
+
+  .what-we-do-left h1 {
+      font-size: 3.5rem; /* Adjusted for smaller screens */
+      text-align: center;
+      width: 100%; /* Take full width */
+  }
+
+  .what-we-do-cards {
+      flex-direction: column; /* Stack cards vertically */
+      gap: 30px;
+  }
+
+  .card {
+      min-width: unset; /* Remove min-width constraint for better stacking */
+      width: 100%; /* Take full width */
+  }
+
+  /* Services Grid */
+  .service-grid-inner-content {
+      grid-template-columns: 1fr; /* Single column on small screens */
+  }
+
+  /* Our Process Section */
+  .our-process-section .section-title {
+      font-size: 2.2rem;
+  }
+  .process-steps {
+      grid-template-columns: 1fr; /* Single column on small screens */
+      gap: 40px;
+  }
+  .process-item {
+      flex-direction: column; /* Stack number and content */
+      align-items: center;
+      text-align: center;
+      padding-left: 0;
+  }
+  .process-number {
+      position: static; /* Remove absolute positioning */
+      font-size: 4rem; /* Smaller on mobile */
+      margin-bottom: 10px;
+      color: rgba(0, 0, 0, 0.05); /* Even lighter for mobile */
+  }
+  .process-content {
+      padding-left: 0;
+  }
+  .process-icon {
+      margin-bottom: 10px;
+  }
+
+  /* Clients Section */
+  .clients-section {
+      padding: 40px 0;
+  }
+  .clients-section h2 {
+      font-size: 28px;
+  }
+  .client-logos {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust for smaller logos */
+  }
+
+  /* Footer */
+  .footer-container {
+      grid-template-columns: 1fr; /* Single column on small screens */
+      text-align: center; /* Center footer content */
+  }
+
+  .footer-col ul {
+      text-align: center;
+  }
+
+  .social-icons {
+      justify-content: center; /* Center social icons */
+      display: flex;
+  }
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero h2 {
+      font-size: 3.5rem;
+  }
+
+  .what-we-do-left h1 {
+      font-size: 4rem;
+  }
+
+  .what-we-do-cards {
+      flex-direction: column; /* Stack cards on medium screens if needed */
+      gap: 40px;
+  }
+
+  .our-process-section .section-title {
+      font-size: 2.8rem;
+  }
+
+  .process-steps {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust for 2 columns */
+      gap: 50px 30px;
+  }
+}
