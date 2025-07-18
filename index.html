@@ -1,388 +1,989 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Techyfe - Empowering Digital Solutions</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40jBliWEiDKckWCPsD/sRXhpQ+6xQyC6pDYLV/4R+Y64jP9S8L/2z9gY6G7x7G5A5E7G6G6G6G6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet"
-  />
-  
-  <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engitech App</title>
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-  />
-  
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-</head>
-<body>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <header>
-        <h1 style="color:white">Techyfe</h1>
-        <div class="menu-toggle" id="menu-toggle">
-          <i class="fas fa-bars" id="toggle-icon"></i>
+    <!-- Font Awesome for icons -->
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+      }
+
+      @keyframes slide-left {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      @keyframes slide-right {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+
+      .animate-slide-left {
+        animation: slide-left 20s linear infinite;
+      }
+
+      .animate-slide-right {
+        animation: slide-right 20s linear infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-[#0D0F2D] text-white">
+    <!-- ✅ Fixed Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0D0F2D] shadow-md">
+      <div
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="/logo-techyfe.webp" alt="logo" class="w-8 h-8" />
+          <h1 class="text-xl font-bold">Techyfe</h1>
         </div>
-        <nav id="nav-links">
-          <a href="/">Home</a>
-          <a href="/About.html">About</a>
-          <a href="/services.html">Services</a>
-        
-          <a href="/portfolio.html">Portfolio</a>
-          <a href="/contact.html">Contact</a>
-          <a href="https://wa.me/919718820229" class="menu-button lets-talk-button" target="_blank">
-            Let's Talk
-        </a>
-            
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="/index.html" class="text-cyan-400 font-medium">Home</a>
+          <a href="#about-section" class="hover:text-cyan-300">About</a>
+          <a href="#service-section" class="hover:text-cyan-300">Services</a>
+          <a href="#Testimonial" class="hover:text-cyan-300">Testimonial</a>
+          <a href="#contact-us" class="hover:text-cyan-300">Contact Us</a>
         </nav>
-      </header>
-      
 
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Empowering Your Business with Web & AI Solutions
-      </h2>
-      <p> From custom websites to intelligent AI solutions — we help businesses innovate and grow.
-      </p>
-      <a href="https://wa.me/919718820229" target="_blank" class="techyfe-button">
-        Let's Work Together <span class="arrow">→</span>
-      </a>
-    </div>
-    <div class="hero-img">
-      <img src="/images/digital-solution.jpg" alt="Tech Illustration">
-    </div>
-  </section>
+        <!-- Desktop Buttons -->
+        <div class="hidden md:flex items-center space-x-4">
+          <!-- <button class="p-2"><i class="fas fa-search"></i></button> -->
+          <a
+            href="https://wa.me/919718820229?text=Hi%2C%20I%E2%80%99m%20interested%20in%20working%20together."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-4 border px-4 py-2 rounded-full hover:bg-white hover:text-black transition inline-block text-center"
+          >
+            Book a Free Discovery Call
+          </a>
+        </div>
 
-  <!-- Service Section -->
-<section class="service-section">
-    <div class="service-left">
-      <h1>Transforming Ideas Into<br> Innovative Digital Agency</h1>
-      <a href="https://wa.me/919718820229" target="_blank">Free Consultant →</a>
-    </div>
-  
-    <div class="service-card">
-      <div class="number">01</div>
-      <h3>Graphic Design</h3>
-      <ul>
-        <li>UI/UX Mockup Design</li>
-        <li>Logo Design</li>
-        <li>Banner Design</li>
-        <li>Social Media Post</li>
-        <li>Brochure Design</li>
-      </ul>
-    </div>
-  </section>
-  
-  <section class="service-card-container">
-    <div class="service-card">
-      <div class="number">02</div>
-      <h3>Website Design & Development</h3>
-      <ul>
-        <li>Custom Web Development</li>
-        <li>React Development</li>
-        <li>WordPress Development</li>
-        <li>E-Commerce Development</li>
-        <li>CMS Development</li>
-      </ul>
-    </div>
-  
-    <div class="service-card">
-      <div class="number">03</div>
-      <h3>Digital Marketing</h3>
-      <ul>
-        <li>SEO Optimization</li>
-        <li>Social Media Marketing</li>
-        <li>Brand Marketing</li>
-        <li>Ads Marketing</li>
-      </ul>
-    </div>
-  
-    <div class="service-card">
-      <div class="number">04</div>
-      <h3>Product Development</h3>
-      <ul>
-        <li>Idea Validation & Research</li>
-        <li>UI/UX Design</li>
-        <li>MVP Development</li>
-        <li>API Integration</li>
-        <li>Testing & Launch</li>
-      </ul>
-    </div>
-  </section>
-  
-<!-- empower you business -->
-<section class="growth-section">
-    <h2 class="growth-heading">Empowering Your Business Growth</h2>
-    <p class="growth-description">
-      At Techyfe, we partner with you to unlock your business potential. Through innovation, strategic solutions, and cutting-edge technology, we help you scale, compete, and grow stronger in your industry.
-    </p>
-  
-    <div class="growth-box-container">
-      <div class="growth-box">
-        <div class="growth-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Strategic Planning</h3>
-        <p>We analyze your business deeply to create customized growth strategies that fit your vision.</p>
+        <!-- ✅ Mobile Toggle Button -->
+        <div class="md:hidden">
+          <button
+            id="menu-toggle"
+            class="text-white text-2xl focus:outline-none"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
-  
-      <div class="growth-box">
-        <div class="growth-icon"><i class="fas fa-lightbulb"></i></div>
-        <h3>Innovation Driven</h3>
-        <p>We use advanced technologies & creative ideas to deliver innovative business solutions.</p>
-      </div>
-  
-      <div class="growth-box">
-        <div class="growth-icon"><i class="fas fa-rocket"></i></div>
-        <h3>Scaling Up</h3>
-        <p>Helping you expand your business capabilities, reach wider audiences, and achieve sustainable growth.</p>
-      </div>
-      
+    </header>
+
+    <!-- ✅ Mobile Menu: moved OUTSIDE header -->
+    <div
+      id="mobile-menu"
+      class="md:hidden hidden bg-[#0D0F2D] px-6 pt-24 pb-6 fixed top-0 left-0 w-full h-screen z-40"
+    >
+      <nav class="flex flex-col space-y-4">
+        <a href="/index.html" class="text-cyan-400 font-medium">Home</a>
+        <a href="#about-section" class="hover:text-cyan-300">About</a>
+        <a href="#service-section" class="hover:text-cyan-300">Services</a>
+        <a href="#Testimonial" class="hover:text-cyan-300">Testimonial</a>
+        <a href="#contact-us" class="hover:text-cyan-300">Contact Us</a>
+        <a
+          href="https://wa.me/919718820229?text=Hi%2C%20I%E2%80%99m%20interested%20in%20working%20together."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-4 border px-4 py-2 rounded-full hover:bg-white hover:text-black transition inline-block text-center"
+        >
+          Book a Free Discovery Call
+        </a>
+      </nav>
     </div>
-    <div class="growth-btn">
-        <a href="https://wa.me/919718820229" target="_blank" class="lets-talk-btn">
-          Let's Talk <i class="fas fa-arrow-right"></i>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-[#0D0F2D]">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between"
+      >
+        <!-- Left Text Content -->
+        <div class="lg:w-1/2 space-y-6">
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+            Grow Your Business with Cutting-Edge IT & Digital Marketing
+            Solutions
+          </h1>
+          <p class="text-gray-300 md:text-2xl">
+            We design high-performing websites and craft digital strategies to
+            help your brand grow and scale online.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="https://wa.me/919718820229?text=Hi%2C%20I%E2%80%99m%20interested%20in%20working%20together."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 border px-4 py-2 rounded-full hover:bg-white hover:text-black transition inline-block text-center"
+            >
+              Get a Free Consultation
+            </a>
+
+            <a
+              href="/Techyfe-Portfolio.pdf"
+              target="_blank"
+              class="mt-4 border px-4 py-2 rounded-full hover:bg-white hover:text-black transition inline-block text-center"
+            >
+              Explore Our Work
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Image/Mockup -->
+        <div class="lg:w-1/2 mt-10 lg:mt-0">
+          <img
+            src="./home9-img-one.png"
+            alt="dashboard UI"
+            class="w-full rounded-xl"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about-section" class="py-20 bg-[#0D0F2D] text-white">
+      <!-- Top Logos -->
+      <!-- Section Container -->
+      <div class="bg-[#0D0F2D] pb-20">
+        <div
+          class="max-w-7xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 py-10 gap-6"
+        >
+          <!-- Row 1 Logos -->
+          <div
+            class="w-20 h-20 bg-orange-400 flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-tooth text-white text-2xl"></i>
+          </div>
+          <div
+            class="w-20 h-20 bg-green-700 flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-leaf text-white text-2xl"></i>
+          </div>
+          <div
+            class="w-20 h-20 bg-purple-800 flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-utensils text-white text-2xl"></i>
+          </div>
+          <div
+            class="w-20 h-20 bg-yellow-700 flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-oil-can text-white text-2xl"></i>
+          </div>
+          <div
+            class="w-20 h-20 bg-black flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-copyright text-pink-500 text-2xl"></i>
+          </div>
+          <div
+            class="w-20 h-20 bg-orange-600 flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-shield-alt text-white text-2xl"></i>
+          </div>
+
+          <!-- Row 2 Logos -->
+          <div
+            class="w-20 h-20 bg-pink-500 flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-glass-martini-alt text-white text-2xl"></i>
+          </div>
+          <div
+            class="w-20 h-20 bg-white flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-puzzle-piece text-green-600 text-2xl"></i>
+          </div>
+          <div
+            class="w-20 h-20 bg-blue-900 flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-times text-white text-2xl"></i>
+          </div>
+          <div
+            class="w-20 h-20 bg-teal-400 flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-arrow-up text-white text-2xl"></i>
+          </div>
+          <div
+            class="w-20 h-20 bg-purple-900 flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-heart text-orange-500 text-2xl"></i>
+          </div>
+          <div
+            class="w-20 h-20 bg-yellow-400 flex items-center justify-center rounded-lg"
+          >
+            <i class="fas fa-map-marker-alt text-black text-2xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10"
+      >
+        <!-- Left Content -->
+        <div>
+          <p class="text-sm uppercase text-gray-400 mb-2">About Us</p>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
+            We are a results-driven <br />IT & digital marketing agency
+          </h2>
+          <p class="text-gray-400 mb-6">
+            Techyfe is a results-driven IT and Digital Marketing agency that
+            helps businesses create a strong online presence. From modern
+            website development to high-converting social media strategies, we
+            do it all. Our young, passionate team works with businesses of all
+            sizes to deliver creative, tech-powered solutions.
+          </p>
+          <a
+            href="#"
+            class="text-teal-400 font-semibold hover:underline inline-flex items-center"
+          >
+            Our Story <span class="ml-2 text-xl">→</span>
+          </a>
+        </div>
+
+        <!-- Right Content -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4">
+            These cases are perfectly simple and easy to distinguish.
+          </h3>
+          <p class="text-gray-400 mb-6">
+            Segment collects user events from your web & mobile apps and
+            provides a complete data toolkit to every team in your company.
+          </p>
+
+          <!-- Stats -->
+          <div class="flex flex-wrap gap-10 mt-6">
+            <div>
+              <h4 class="text-4xl font-bold text-teal-400">6</h4>
+              <p class="text-sm text-gray-300 mt-1">Years of Experience</p>
+            </div>
+            <div>
+              <h4 class="text-4xl font-bold text-teal-400">500+</h4>
+              <p class="text-sm text-gray-300 mt-1">Satisfied Clients</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- service--------- section -->
+    <div id="service-section" class="bg-[#0D0F2D] py-16">
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6"
+        id="feature-grid"
+      >
+        <!-- Box 1 -->
+        <div
+          class="feature-box bg-[#26244D] text-white p-6 rounded-xl space-y-4 active cursor-pointer"
+        >
+          <div
+            class="w-14 h-14 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-laptop-code text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold">Website Design & Development</h3>
+          <p class="text-gray-300">
+            Build stunning, fast, and user-friendly websites tailored to your
+            brand. From portfolio sites to full-scale business portals, we
+            create responsive and SEO-ready designs that convert visitors into
+            customers.
+          </p>
+          <a
+            href="#"
+            class="text-white font-semibold inline-flex items-center space-x-2"
+          >
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Box 2 -->
+        <div
+          class="feature-box bg-[#0D0F2D] text-white p-6 rounded-xl space-y-4 hover:bg-[#1B1C3A] transition cursor-pointer"
+        >
+          <div
+            class="w-14 h-14 bg-[#26244D] rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-share-alt text-teal-300 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold">Social Media Management</h3>
+          <p class="text-gray-300">
+            Boost your visibility with powerful marketing strategies. We help
+            you dominate search engines, engage on social media, and run
+            high-converting ad campaigns that bring real results.
+          </p>
+          <a
+            href="#"
+            class="text-white font-semibold inline-flex items-center space-x-2"
+          >
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Box 3 -->
+        <div
+          class="feature-box bg-[#0D0F2D] text-white p-6 rounded-xl space-y-4 hover:bg-[#1B1C3A] transition cursor-pointer"
+        >
+          <div
+            class="w-14 h-14 bg-[#26244D] rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-paint-brush text-pink-400 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold">Branding & Logo Design</h3>
+          <p class="text-gray-300">
+            Make your brand unforgettable with unique designs. From logos to
+            packaging to social creatives, our design team creates visually
+            striking assets that leave a lasting impression.
+          </p>
+          <a
+            href="#"
+            class="text-white font-semibold inline-flex items-center space-x-2"
+          >
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Box 4 -->
+        <div
+          class="feature-box bg-[#0D0F2D] text-white p-6 rounded-xl space-y-4 hover:bg-[#1B1C3A] transition cursor-pointer"
+        >
+          <div
+            class="w-14 h-14 bg-[#26244D] rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-bullhorn text-pink-400 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold">Digital Marketing</h3>
+          <p class="text-gray-300">
+            SEO, performance ads, and email marketing that convert leads into
+            clients. We help you build visibility where it matters most — on
+            search engines, social platforms, and inboxes. Through smart keyword
+            targeting, high-converting ad campaigns, and personalized email
+            automation.
+          </p>
+          <a
+            href="#"
+            class="text-white font-semibold inline-flex items-center space-x-2"
+          >
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Box 5 -->
+        <div
+          class="feature-box bg-[#0D0F2D] text-white p-6 rounded-xl space-y-4 hover:bg-[#1B1C3A] transition cursor-pointer"
+        >
+          <div
+            class="w-14 h-14 bg-[#26244D] rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-video text-pink-400 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold">Video Editing & Motion Graphics</h3>
+          <p class="text-gray-300">
+            Stunning visuals for banners, posters, packaging, and digital
+            creatives — crafted to reflect your brand’s personality, grab
+            attention instantly, and drive meaningful engagement across print
+            and online platforms.
+          </p>
+          <a
+            href="#"
+            class="text-white font-semibold inline-flex items-center space-x-2"
+          >
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Box 6 -->
+        <div
+          class="feature-box bg-[#0D0F2D] text-white p-6 rounded-xl space-y-4 hover:bg-[#1B1C3A] transition cursor-pointer"
+        >
+          <div
+            class="w-14 h-14 bg-[#26244D] rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-pencil-ruler text-pink-400 text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold">Branding & Creative Design</h3>
+          <p class="text-gray-300">
+            Make your brand unforgettable with unique designs. From logos to
+            packaging to social creatives, our design team creates visually
+            striking assets that leave a lasting impression.
+          </p>
+          <a
+            href="#"
+            class="text-white font-semibold inline-flex items-center space-x-2"
+          >
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proven Process Section -->
+
+    <section class="bg-[#0D0F2D] py-20">
+      <div
+        class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10"
+      >
+        <!-- Left Content -->
+        <div>
+          <!-- Small heading -->
+          <p class="text-sm uppercase text-white/70 mb-4">Our Process</p>
+
+          <!-- Main heading -->
+          <h2
+            class="text-4xl md:text-5xl font-bold text-white leading-snug mb-6"
+          >
+            Why Choose Us<br class="hidden sm:block" />
+          </h2>
+
+          <!-- Paragraph -->
+          <p class="text-white/80 mb-10 text-lg">
+            Why Businesses Trust Techyfe
+          </p>
+
+          <!-- Steps -->
+          <div class="space-y-6">
+            <!-- Step 1 -->
+            <div class="flex items-start gap-4">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-white text-lg"
+              >
+                ✓
+              </div>
+              <div>
+                <h4 class="text-white text-xl font-semibold mb-1">
+                  Creative + Technical Expertise
+                </h4>
+                <!-- <p class="text-white/80 text-sm">
+                  Call and message anyone, anywhere in the world. Make
+                  cross-border communication easier.
+                </p> -->
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex items-start gap-4">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-white text-lg"
+              >
+                ✓
+              </div>
+              <div>
+                <h4 class="text-white text-xl font-semibold mb-1">
+                  On-Time Project Delivery
+                </h4>
+                <!-- <p class="text-white/80 text-sm">
+                  Call and message anyone, anywhere in the world. Make
+                  cross-border communication easier.
+                </p> -->
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex items-start gap-4">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-white text-lg"
+              >
+                ✓
+              </div>
+              <div>
+                <h4 class="text-white text-xl font-semibold mb-1">
+                  Affordable Pricing
+                </h4>
+                <!-- <p class="text-white/80 text-sm">
+                  Call and message anyone, anywhere in the world. Make
+                  cross-border communication easier.
+                </p> -->
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex items-start gap-4">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-white text-lg"
+              >
+                ✓
+              </div>
+              <div>
+                <h4 class="text-white text-xl font-semibold mb-1">
+                  100% Satisfaction Guarantee
+                </h4>
+                <!-- <p class="text-white/80 text-sm">
+                  Call and message anyone, anywhere in the world. Make
+                  cross-border communication easier.
+                </p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Image -->
+        <div class="rounded-lg overflow-hidden shadow-lg">
+          <img
+            src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg"
+            alt="Team working"
+            class="w-full rounded-lg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Single View Section -->
+    <section class="bg-[#0D0F2D] py-16">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-10"
+      >
+        <!-- Left Image -->
+        <div class="w-full lg:w-1/2 relative">
+          <div class="overflow-hidden rounded-xl">
+            <img
+              src="https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg"
+              alt="Team Working"
+              class="rounded-xl w-full object-cover"
+            />
+          </div>
+
+          <!-- Industries We Serve -->
+          <div
+            class="absolute bottom-0 left-0 transform translate-x-6 translate-y-6 bg-[#1b1b3a]/80 backdrop-blur-md rounded-xl p-4 w-72 shadow-lg text-white text-sm space-y-4"
+          >
+            <p class="text-xs font-bold text-gray-300">NOTIFICATIONS</p>
+            <div>
+              <p class="font-semibold">
+                Clifford Hale
+                <span class="text-gray-400">sent you a message</span>
+              </p>
+              <p class="text-gray-400 text-xs">2 hours ago</p>
+            </div>
+            <div>
+              <p class="font-semibold text-cyan-400">Lottie Marsh</p>
+              <p class="text-gray-300 text-xs">+380.234 LTC</p>
+            </div>
+            <div>
+              <p class="font-semibold text-pink-400">
+                BTC <span class="text-gray-300">+39.60%</span>
+              </p>
+            </div>
+            <div class="text-right">
+              <a href="#" class="text-blue-400 underline text-xs">See All</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Text Content -->
+        <div class="w-full lg:w-1/2 space-y-4">
+          <!-- <p class="text-sm text-gray-400 uppercase font-semibold">
+    Industries We Serve
+  </p> -->
+          <h2 class="text-4xl md:text-5xl font-bold leading-tight text-white">
+            Industry We Serve<br />
+          </h2>
+
+          <!-- Industry Pointers -->
+          <ul class="list-disc list-inside text-gray-300 space-y-1">
+            <li>Health & Wellness</li>
+            <li>Restaurants & Cloud Kitchens</li>
+            <li>Skincare & Beauty Brands</li>
+            <li>Real Estate</li>
+            <li>Education & eLearning</li>
+            <li>Event & Wedding Planners</li>
+          </ul>
+
+          <a
+            href="#"
+            class="text-teal-400 font-semibold inline-flex items-center space-x-2"
+          >
+            <span>Learn more</span>
+            <i class="fas fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="bg-[#0D0F2D] py-20">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <!-- Subtitle -->
+        <p class="text-sm uppercase text-white/70 mb-4">Our Results</p>
+
+        <!-- Title -->
+        <h2
+          class="text-4xl md:text-5xl font-bold text-white leading-snug mb-12"
+        >
+          We Built Techyfe to Grow <br class="hidden sm:block" />
+          with You
+        </h2>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Stat 1 -->
+          <div>
+            <h3 class="text-4xl font-bold text-teal-400 mb-2">$2M+</h3>
+            <p class="text-white text-lg">In Managed Ad Spend</p>
+          </div>
+
+          <!-- Stat 2 -->
+          <div>
+            <h3 class="text-4xl font-bold text-teal-400 mb-2">3k+</h3>
+            <p class="text-white text-lg">Custom Ecommerce Designs</p>
+          </div>
+
+          <!-- Stat 3 -->
+          <div>
+            <h3 class="text-4xl font-bold text-teal-400 mb-2">+81%</h3>
+            <p class="text-white text-lg">Avg. Increase in Traffic YoY</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact us Section -->
+    <section
+      id="contact-us"
+      class="bg-gradient-to-r from-cyan-400 to-blue-700 text-white py-28"
+    >
+      <div class="max-w-4xl mx-auto text-center px-4">
+        <!-- Subtitle -->
+        <p class="uppercase tracking-widest text-white/80 text-sm mb-4">
+          Works Together
+        </p>
+
+        <!-- Heading -->
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          We've Help Businesses <br />
+          Increase Revenue
+        </h2>
+
+        <!-- Description -->
+        <p class="text-white/90 text-lg mb-10">
+          But in certain circumstances and owing to the claims of duty or <br />
+          the obligations of business it will frequently
+        </p>
+
+        <!-- Button -->
+        <a
+          href="https://wa.me/919718820229?text=Hi%2C%20I%E2%80%99m%20interested%20in%20working%20together."
+          target="_blank"
+          class="inline-block bg-white text-black px-8 py-4 rounded-full text-lg font-medium shadow-md hover:bg-gray-200 transition"
+        >
+          Let’s Work Together
         </a>
       </div>
-  </section>
-  <!-----------our client logos-----------  -->
+    </section>
 
-  <section class="brand-logos">
-    <div class="brand-container rounded-md max-w-6xl mx-auto ">
-      <img src="/images/intents.png" alt="Intents" class="brand-logo">
-      <img src="/images/be_hotel.png" alt="VibyVibes" class="brand-logo">
-      <img src="/images/Vibyvibes.png" alt="MadhuMaa" class="brand-logo">
-      <img src="/images/madhumaa.svg" alt="Studio" class="brand-logo">
-      <img src="/images/logo.svg" alt="Skiney" class="brand-logo">
-    </div>
-  </section>
+    <!-- Testimonials Section -->
+    <section id="Testimonial" class="bg-[#0D0F2D] py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <!-- <p class="text-sm uppercase text-white/70"></p> -->
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            Client Testimonials
 
-
-
-  <!-- ----------------------process section------- -->
-  <section class="process-section">
-    <div class="process-header">
-      <p class="subheading">Process</p>
-      <h2>How We Turn Ideas into Reality</h2>
-    </div>
-    <div class="process-grid">
-      <!-- Discover -->
-      <div class="process-card">
-        <div class="icon-circle">
-          <i class="fas fa-lightbulb fa-3x" style="color: #A3E635;"></i>
-
+            <br class="hidden md:block" />
+          </h2>
+          <!-- <p class="text-white/60 max-w-2xl mx-auto">
+        CFOs, controllers, accountants and finance admins at companies of
+        every size and industry rely on Engitech to take control of their
+        business spending.
+      </p> -->
         </div>
-        <h3>Discover</h3>
-        <p>
-          Understanding your vision, target audience &amp; market trends to lay a strong foundation.
-        </p>
-      </div>
-      <!-- Design -->
-      <div class="process-card">
-        <div class="icon-circle">
-          <i class="fas fa-paint-brush fa-3x" style="color: #A3E635;"></i>
 
-        </div>
-        <h3>Design</h3>
-        <p>
-          Crafting stunning visuals, user interfaces, and seamless experiences tailored for your audience.
-        </p>
-      </div>
-      <!-- Develop -->
-      <div class="process-card">
-        <div class="icon-circle">
-          <i class="fas fa-laptop-code fa-3x" style="color: #A3E635;"></i>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- Testimonial 1 -->
+            <div
+              class="swiper-slide bg-[#1B1C3A] p-8 rounded-xl text-white text-center"
+            >
+              <i class="fas fa-quote-left text-teal-400 text-2xl mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">Perfectly!</h3>
+              <p class="text-gray-300 mb-6">
+                “Working with Techyfe was an incredibly smooth and satisfying
+                experience. From the initial logo concepts to the final website,
+                everything was delivered with attention to detail, creativity,
+                and professionalism. The branding beautifully captures the
+                essence of our restaurant, and the website has made it easy for
+                our customers to connect and explore our offerings online.
+                Highly recommend Techyfe for businesses looking to build a
+                strong digital presence.”
+              </p>
+              <div class="flex flex-col items-center">
+                <img
+                  src="./client.png"
+                  class="w-14 h-14 rounded-full mb-2"
+                  alt="Andrew"
+                />
+                <p class="font-semibold">Karmanya, Saket Delhi</p>
+                <span class="text-sm text-gray-400"
+                  >Founder & Owner, B.E Restaurant</span
+                >
+              </div>
+            </div>
 
-        </div>
-        <h3>Develop</h3>
-        <p>
-          Building powerful, scalable and responsive digital solutions with cutting-edge technologies.
-        </p>
-      </div>
-      <!-- Launch & Scale -->
-      <div class="process-card">
-        <div class="icon-circle">
-          <i class="fas fa-rocket fa-3x" style="color: #A3E635;"></i>
+            <!-- Testimonial 2 -->
+            <div
+              class="swiper-slide bg-[#1B1C3A] p-8 rounded-xl text-white text-center"
+            >
+              <i class="fas fa-quote-left text-teal-400 text-2xl mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">Perfectly!</h3>
+              <p class="text-gray-300 mb-6">
+                “Techyfe helped bring my business vision to life with a bold and
+                creative logo along with a clean, functional website. As someone
+                running a T-shirt printing business, the design needed to
+                reflect both style and reliability — and Techyfe nailed it.
+                Their team was responsive, understood my brand, and delivered
+                everything on time. Truly grateful for the professionalism and
+                quality work.”
+              </p>
+              <div class="flex flex-col items-center">
+                <img
+                  src="./brahmpal.png"
+                  class="w-14 h-14 rounded-full mb-2"
+                  alt="Peter"
+                />
+                <p class="font-semibold">Brahmpal, Gaziabad</p>
+                <span class="text-sm text-gray-400"
+                  >Founder, T-Shirt Printing Business</span
+                >
+              </div>
+            </div>
 
-        </div>
-        <h3>Launch &amp; Scale</h3>
-        <p>
-          Successfully launching and growing your project with continuous monitoring &amp; optimization.
-        </p>
-      </div>
-    </div>
-  </section>
+            <!-- Testimonial 3 -->
+            <div
+              class="swiper-slide bg-[#1B1C3A] p-8 rounded-xl text-white text-center"
+            >
+              <i class="fas fa-quote-left text-teal-400 text-2xl mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">Perfectly!</h3>
+              <p class="text-gray-300 mb-6">
+                “I partnered with Techyfe to manage the social media of my water
+                supply agency, and the results have been excellent. Their posts
+                were engaging, informative, and perfectly suited for our local
+                audience. Thanks to their strategy and consistency, we gained
+                better visibility and trust in the area. Highly recommend their
+                service to any local business looking to grow digitally.”
+              </p>
+              <div class="flex flex-col items-center">
+                <img
+                  src="./manoj.png"
+                  class="w-14 h-14 rounded-full mb-2"
+                  alt="Amandah"
+                />
+                <p class="font-semibold">Manoj, Fatehpur</p>
+                <span class="text-sm text-gray-400">Owner, Water Agency</span>
+              </div>
+            </div>
 
-  <!-- --------------------client counters section------ -->
-<section class="stats-section">
-  <div class="stats-container">
-    <div class="stat-box">
-      <h2>500+</h2>
-      <p>Projects Successfully Delivered</p>
-    </div>
-    <div class="stat-box">
-      <h2>400+</h2>
-      <p>Happy &amp; Satisfied Clients</p>
-    </div>
-    <div class="stat-box">
-      <h2>50+</h2>
-      <p>Ongoing Client Partnerships</p>
-    </div>
-  </div>
-</section>
-  <!--------------------testimoanil section-------  -->
-  <section class="testimonials-section">
-    <div class="testimonials-header">
-      <p class="subheading">Client Satisfactions</p>
-      <h2>Testimonials</h2>
-    </div>
-  
-    <div class="swiper testimonial-carousel">
-      <div class="swiper-wrapper">
-        <!-- Slide 1 -->
-        <div class="swiper-slide testimonial-card green-bg">
-            <img src="/images/intents.png" class="client-logo" />
-            <h3>Social Media Handle</h3>
-            <p class="feedback">
-              <em>
-                Code Reveals helped us create engaging social media posts to boost our brand...
-                Working with Code Reveals has been a great experience.
-              </em>
-            </p>
-            <div class="client-info">
-              <img src="/images/manoj.png" class="client-avatar" />
-              <div>
-                <strong>Manoj Kumar</strong><br />
-                <span>Pani Distributor Fatehpur</span>
+            <!-- Testimonial 2 -->
+            <div
+              class="swiper-slide bg-[#1B1C3A] p-8 rounded-xl text-white text-center"
+            >
+              <i class="fas fa-quote-left text-teal-400 text-2xl mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">Perfectly!</h3>
+              <p class="text-gray-300 mb-6">
+                “Working with Techyfe for my medical equipment business was a
+                smooth and result-driven experience. They understood the
+                seriousness of our industry and designed professional branding
+                and digital assets that resonated well with hospital buyers.
+                Their work helped us build credibility and trust. I'm really
+                happy with their service and professionalism.”
+              </p>
+              <div class="flex flex-col items-center">
+                <img
+                  src="./WhatsApp Image 2025-03-08 at 11.32.08_f8a3ba5f.jpg"
+                  class="w-14 h-14 rounded-full mb-2"
+                  alt="Peter"
+                />
+                <p class="font-semibold">Kshama, Varanasi</p>
+                <span class="text-sm text-gray-400"
+                  >Founder, Medical Equipment Supplier</span
+                >
               </div>
             </div>
           </div>
 
-
-          <!-- slide 2 -->
-
-          <div class="swiper-slide testimonial-card gray-bg">
-            <img src="/images/Vibyvibes.png" class="client-logo" />
-            <h3>Creative Mind</h3>
-            <p class="feedback">
-              <em>
-                Working with Code Reveals has been a great experience. Their team delivered exactly what we needed on time and with excellent quality. Highly recommend their services!
-              </em>
-            </p>
-            <div class="client-info">
-              <img src="/images/brahmpal.png" class="client-avatar" />
-              <div>
-                <strong>Brahmpal</strong><br />
-                <span>Vibyvibes</span>
-              </div>
-            </div>
-          </div>
-        <!-- Slide 3 -->
-        <div class="swiper-slide testimonial-card green-bg">
-          <img src="/images/be_hotel.png" class="client-logo" />
-          <h3>Great Work</h3>
-          <p class="feedback">
-            <em>
-              Code Reveals brought our vision to life with a stunning logo design...
-              Working with Code Reveals has been a great experience.
-            </em>
-          </p>
-          <div class="client-info">
-            <img src="/images/karmanya.png" class="client-avatar" />
-            <div>
-              <strong>Karmanya</strong><br />
-              <span>The B.E. Restaurant</span>
-            </div>
+          <!-- Navigation & Pagination -->
+          <div class="swiper-pagination mt-6"></div>
+          <div class="flex justify-center mt-4 space-x-4">
+            <div class="swiper-button-prev text-white"></div>
+            <div class="swiper-button-next text-white"></div>
           </div>
         </div>
-            
-    
       </div>
-  
-      <!-- Pagination Dots -->
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-  <!-- CTA section -->
-  <section class="cta-section">
-    <div class="cta-box">
-      <div class="circle-decoration"></div>
-      <h2>
-        Have a Project?<br />
-        <strong>Let’s Talk and Grow Your Business</strong>
-      </h2>
-      <a href="https://wa.me/919718820229" target="_blank" class="cta-button">
-        Get Started
-        <span class="arrow">→</span>
-      </a>
-    </div>
-  </section>
-  
-  
-  <!-- footer -->
+    </section>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-column">
-        <div class="footer-logo">
-          <div class="logo-gradient"></div>
-          <h2>Techyfe</h2>
+    <footer class="bg-[#0D0F2D] text-white py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-12"
+        >
+          <!-- Contacts -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contacts</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>+91-9718820229</li>
+
+              <li>Mon – Fri: 10am – 10pm</li>
+              <li>Noida Sector -2, UP 201301</li>
+            </ul>
+            <p class="mt-4 text-teal-400">info.techyfe@gmail.com</p>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Company</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="/index.html" class="hover:text-teal-400">Home</a>
+              </li>
+              <li>
+                <a href="#about-section" class="hover:text-teal-400">About</a>
+              </li>
+              <li>
+                <a href="#service-section" class="hover:text-teal-400"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#Testimonial" class="hover:text-teal-400"
+                  >Testimonial</a
+                >
+              </li>
+              <li>
+                <a href="#contact-us" class="hover:text-teal-400">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Resources</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a
+                  href="/privacy-policy.html"
+                  target="_blank"
+                  class="hover:text-teal-400"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/terms-and-condition.html"
+                  target="_blank"
+                  class="hover:text-teal-400"
+                  >Terms of Use</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/discliamer.html"
+                  target="_blank"
+                  class="hover:text-teal-400"
+                  >Disclaimer</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Follow Us -->
+          <!-- <div>
+            <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li><a href="#" class="hover:text-teal-400">Facebook</a></li>
+              <li><a href="#" class="hover:text-teal-400">Twitter</a></li>
+              <li><a href="#" class="hover:text-teal-400">Instagram</a></li>
+              <li><a href="#" class="hover:text-teal-400">LinkedIn</a></li>
+            </ul>
+          </div> -->
         </div>
-        <p>
-          Techyfe, we cater to learners at every stage, providing meticulously crafted content that seamlessly guides you from foundational principles to advanced techniques.
-        </p>
-      </div>
-  
-      <div class="footer-column">
-        <h3>COMPANY</h3>
-        <ul>
-          <li><a href="/About.html">About Us</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-          <li><a href="/disclaimer.html">Disclaimer</a></li>
-          <li><a href="/blog.html">Blog</a></li>
-        </ul>
-      </div>
-  
-      <div class="footer-column">
-        <h3>SOCIAL MEDIA</h3>
-        <ul>
-          <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-          <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-        </ul>
-      </div>
-  
-      <div class="footer-column">
-        <h3>CONTACT INFO</h3>
-        <ul>
-          <li><i class="fas fa-map-marker-alt"></i> Techyfe<br>India-based Digital Agency</li>
-          <li><i class="fas fa-phone"></i> +91-9718820229</li>
-          <li><i class="fas fa-envelope"></i> info@techyfe.com</li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="footer-bottom">
-      <p>Copyright © 2025 <a href="https://techyfe.com/">techyfe.com</a>. All Rights Reserved</p>
-      <p>
-        <a href="/term-n-condition.html">Terms Conditions</a> |
-        <a href="/privacy-policy.html">Privacy Policy</a>
-      </p>
-    </div>
-  </footer>
-  
-  
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-  <script src="script.js"></script>
-</body>
+        <!-- Bottom Footer -->
+        <div
+          class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400"
+        >
+          <p>Copyright © 2025</p>
+          <!-- <div class="flex space-x-4 mt-4 md:mt-0">
+            <a href="#" class="hover:text-teal-400">Privacy Policy</a>
+            <a href="#" class="hover:text-teal-400">Terms of Use</a>
+          </div> -->
+        </div>
+      </div>
+    </footer>
+
+    <!-- ✅ Toggle Script -->
+    <script>
+      const toggleBtn = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      toggleBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+
+    <script>
+      const boxes = document.querySelectorAll(".feature-box");
+
+      boxes.forEach((box) => {
+        box.addEventListener("click", () => {
+          boxes.forEach((b) => b.classList.remove("bg-[#26244D]", "active"));
+          box.classList.add("bg-[#26244D]", "active");
+        });
+      });
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 30,
+        slidesPerView: 1,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    </script>
+  </body>
 </html>
